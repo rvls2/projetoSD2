@@ -1,4 +1,4 @@
-module outraula (
+module ula (
     input [2:0] opcode,     // Opcode (3 bits)
     input [3:0] src1,       // Registrador 1 (4 bits)
     input [3:0] src2, 	 // Registrador 2 (4 bits)
