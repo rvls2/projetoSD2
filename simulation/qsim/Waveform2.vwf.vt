@@ -1,0 +1,199 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/23/2025 12:35:14"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          outraula
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module outraula_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [6:0] imm;
+reg [2:0] opcode;
+reg reset;
+reg [3:0] src1;
+reg [3:0] src2;
+reg [3:0] src3;
+// wires                                               
+wire [7:0] display;
+wire [1:0] estado_memoria;
+wire [15:0] result;
+
+// assign statements (if any)                          
+outraula i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.display(display),
+	.estado_memoria(estado_memoria),
+	.imm(imm),
+	.opcode(opcode),
+	.reset(reset),
+	.result(result),
+	.src1(src1),
+	.src2(src2),
+	.src3(src3)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #1000 1'b1;
+	#1000;
+end 
+// imm[ 6 ]
+initial
+begin
+	imm[6] = 1'b1;
+end 
+// imm[ 5 ]
+initial
+begin
+	imm[5] = 1'b1;
+end 
+// imm[ 4 ]
+initial
+begin
+	imm[4] = 1'b1;
+end 
+// imm[ 3 ]
+initial
+begin
+	imm[3] = 1'b1;
+end 
+// imm[ 2 ]
+initial
+begin
+	imm[2] = 1'b1;
+end 
+// imm[ 1 ]
+initial
+begin
+	imm[1] = 1'b1;
+end 
+// imm[ 0 ]
+initial
+begin
+	imm[0] = 1'b0;
+end 
+// opcode[ 2 ]
+initial
+begin
+	opcode[2] = 1'b0;
+	opcode[2] = #512000 1'b1;
+end 
+// opcode[ 1 ]
+initial
+begin
+	opcode[1] = 1'b0;
+	opcode[1] = #256000 1'b1;
+	opcode[1] = #256000 1'b0;
+	opcode[1] = #256000 1'b1;
+end 
+// opcode[ 0 ]
+initial
+begin
+	repeat(3)
+	begin
+		opcode[0] = 1'b0;
+		opcode[0] = #128000 1'b1;
+		# 128000;
+	end
+	opcode[0] = 1'b0;
+	opcode[0] = #128000 1'b1;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+end 
+// src1[ 3 ]
+initial
+begin
+	src1[3] = 1'b0;
+end 
+// src1[ 2 ]
+initial
+begin
+	src1[2] = 1'b0;
+end 
+// src1[ 1 ]
+initial
+begin
+	src1[1] = 1'b0;
+end 
+// src1[ 0 ]
+initial
+begin
+	src1[0] = 1'b0;
+end 
+// src2[ 3 ]
+initial
+begin
+	src2[3] = 1'b0;
+end 
+// src2[ 2 ]
+initial
+begin
+	src2[2] = 1'b0;
+end 
+// src2[ 1 ]
+initial
+begin
+	src2[1] = 1'b0;
+end 
+// src2[ 0 ]
+initial
+begin
+	src2[0] = 1'b1;
+end 
+// src3[ 3 ]
+initial
+begin
+	src3[3] = 1'b0;
+end 
+// src3[ 2 ]
+initial
+begin
+	src3[2] = 1'b0;
+end 
+// src3[ 1 ]
+initial
+begin
+	src3[1] = 1'b1;
+end 
+// src3[ 0 ]
+initial
+begin
+	src3[0] = 1'b0;
+end 
+endmodule
+

@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at ula.v(12): object "display" differs only in case from object "DISPLAY" in the same scope File: C:/Users/ray38/Downloads/Quartus/mini_cpu/ula.v Line: 12
+Warning (10268): Verilog HDL information at mini_cpu.v(46): always construct contains both blocking and non-blocking assignments File: C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v Line: 46

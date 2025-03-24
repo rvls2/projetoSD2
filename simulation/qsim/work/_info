@@ -1,0 +1,195 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim
+vfinal
+Z1 !s110 1742749616
+!i10b 1
+!s100 ?5]adJSRz0fLhNLD9mK4[3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IVm@AAk9?e=[IzXj_Qni]D3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1742749615
+Z4 8mini_cpu.vo
+Z5 Fmini_cpu.vo
+!i122 32
+L0 32 1385
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1742749616.000000
+Z8 !s107 mini_cpu.vo|
+Z9 !s90 -work|work|mini_cpu.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vfinal_vlg_vec_tst
+R1
+!i10b 1
+!s100 gamB?mOX[1KD]WMKh:5zU2
+R2
+ICCnOWJmLJHhWb3I;5L5hI0
+R3
+R0
+w1742749614
+Z12 8Waveform1.vwf.vt
+Z13 FWaveform1.vwf.vt
+!i122 33
+L0 30 277
+R6
+r1
+!s85 0
+31
+R7
+Z14 !s107 Waveform1.vwf.vt|
+Z15 !s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+R11
+vmini_cpu
+Z16 !s110 1742748802
+!i10b 1
+!s100 ECR2hHH@A;5JOo7T8g0A51
+R2
+I]N6?UWDHDGG?]CU^?MoaD3
+R3
+R0
+Z17 w1742748801
+R4
+R5
+!i122 30
+L0 32 1591
+R6
+r1
+!s85 0
+31
+Z18 !s108 1742748802.000000
+R8
+R9
+!i113 1
+R10
+R11
+vmini_cpu_vlg_vec_tst
+R16
+!i10b 1
+!s100 ^QFmCiNP:NIkgVnl`n?XI1
+R2
+IE97VXh=z`_PFF_?HcZH`<1
+R3
+R0
+R17
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 31
+L0 30 270
+R6
+r1
+!s85 0
+31
+R18
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+voutraula
+Z19 !s110 1742744116
+!i10b 1
+!s100 jGP=FJz3@h1g_^53UBW?k0
+R2
+IZK61_eb]oTLUN9YlhBZE91
+R3
+R0
+Z20 w1742744114
+R4
+R5
+!i122 12
+Z21 L0 32 1481
+R6
+r1
+!s85 0
+31
+Z22 !s108 1742744116.000000
+R8
+R9
+!i113 1
+R10
+R11
+voutraula_vlg_vec_tst
+R19
+!i10b 1
+!s100 JbOa2icTkI<Eg9iA`bgBF3
+R2
+I8fBb`JNOdf3a5Kj9STElN1
+R3
+R0
+R20
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 13
+Z23 L0 30 169
+R6
+r1
+!s85 0
+31
+R22
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R10
+R11
+vula
+Z24 !s110 1742584376
+!i10b 1
+!s100 RIoOV[B5mogi5FY2KbTWK3
+R2
+I^TOMRobP_ZOne[:MlMnZP1
+R3
+R0
+Z25 w1742584375
+R4
+R5
+!i122 10
+R21
+R6
+r1
+!s85 0
+31
+Z26 !s108 1742584376.000000
+R8
+R9
+!i113 1
+R10
+R11
+vula_vlg_vec_tst
+R24
+!i10b 1
+!s100 iFOS@A^l2i?XEQe@bSoB_2
+R2
+IMcfSJEKKd0P3dLNT2;PD32
+R3
+R0
+R25
+R12
+R13
+!i122 11
+R23
+R6
+r1
+!s85 0
+31
+R26
+R14
+R15
+!i113 1
+R10
+R11
