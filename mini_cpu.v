@@ -6,12 +6,12 @@ module mini_cpu (
     output reg [2:0] op_code, // informaçoes para a ula
     output reg [3:0] src1, src2, src3, // src1 também vai para a memória
     output reg signed [6:0] imm,
-	 
+
     input wire signed [15:0] result, // saídas da ula
     input wire [1:0] estado_memoria,
-	 
-	 output reg [15:0] result_mem, // entradas da memória
-	 output reg [1:0] estado_mem
+
+    output reg [15:0] result_mem, // entradas da memória
+    output reg [1:0] estado_mem
 );
 
 reg [1:0] estado_ligar, estado_enviar;
@@ -57,11 +57,11 @@ always @(posedge clk) begin
     endcase
 
     if (ligar) begin
-        case (estado_enviar)
-            inicial: if (b2 == 0) estado_enviar <= espera;
-            espera: if (b2 == 1) estado_enviar <= enviado;
-            enviado: estado_enviar <= inicial;
-            default: estado_enviar <= estado_enviar;
+    case (estado_enviar)
+        inicial: if (b2 == 0) estado_enviar <= espera;
+        espera: if (b2 == 1) estado_enviar <= enviado;
+        enviado: estado_enviar <= inicial;
+        default: estado_enviar <= estado_enviar;
         endcase
     end else estado_enviar <= inicial;
 
@@ -73,9 +73,9 @@ always @(posedge clk) begin
         imm = info[6:0];
         if (info[6]) imm = {1'b1, -(info[5:0])};
         else imm = {1'b0, info[5:0]};
-		  
-		  result_mem = result;
-		  estado_mem = estado_memoria;
+
+        result_mem = result;
+        estado_mem = estado_memoria;
     end
 end
 endmodule
