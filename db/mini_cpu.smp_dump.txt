@@ -1,11 +1,11 @@
 
-State Machine - |final|mini_cpu:inst123|estado_enviar
+State Machine - |mini_cpu|estado_enviar
 Name estado_enviar.inicial estado_enviar.enviado estado_enviar.espera 
 estado_enviar.inicial 0 0 0 
 estado_enviar.espera 1 0 1 
 estado_enviar.enviado 1 1 0 
 
-State Machine - |final|mini_cpu:inst123|estado_ligar
+State Machine - |mini_cpu|estado_ligar
 Name estado_ligar.desligando estado_ligar.ligado estado_ligar.ligando estado_ligar.desligado 
 estado_ligar.desligado 0 0 0 0 
 estado_ligar.ligando 0 0 1 1 

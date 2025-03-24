@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mini_cpu
-Sun Mar 23 14:06:55 2025
+Mon Mar 24 17:50:10 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Mar 23 14:06:55 2025 ;
+; EDA Netlist Writer Status ; Successful - Mon Mar 24 17:50:10 2025 ;
 ; Revision Name             ; mini_cpu                              ;
-; Top-level Entity Name     ; final                                 ;
+; Top-level Entity Name     ; mini_cpu                              ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Mar 23 14:06:55 2025
+    Info: Processing started: Mon Mar 24 17:50:10 2025
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/ mini_cpu -c mini_cpu
 Info (119006): Selected device EP4CE115F29C7 for design "mini_cpu"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file mini_cpu.vo in folder "C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4655 megabytes
-    Info: Processing ended: Sun Mar 23 14:06:55 2025
+    Info: Processing ended: Mon Mar 24 17:50:10 2025
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

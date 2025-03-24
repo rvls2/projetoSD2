@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mini_cpu
-Sun Mar 23 14:05:27 2025
+Mon Mar 24 17:45:57 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,18 +13,16 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |final|mini_cpu:inst123|estado_enviar
-  9. State Machine - |final|mini_cpu:inst123|estado_ligar
+  8. State Machine - |mini_cpu|estado_enviar
+  9. State Machine - |mini_cpu|estado_ligar
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: outraula:inst
- 15. Parameter Settings for User Entity Instance: mini_cpu:inst123
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |mini_cpu
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,16 +49,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 23 14:05:27 2025       ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 24 17:45:57 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; mini_cpu                                    ;
-; Top-level Entity Name              ; final                                       ;
+; Top-level Entity Name              ; mini_cpu                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 29                                          ;
-;     Total combinational functions  ; 25                                          ;
-;     Dedicated logic registers      ; 25                                          ;
-; Total registers                    ; 25                                          ;
-; Total pins                         ; 37                                          ;
+; Total logic elements               ; 50                                          ;
+;     Total combinational functions  ; 16                                          ;
+;     Dedicated logic registers      ; 47                                          ;
+; Total registers                    ; 47                                          ;
+; Total pins                         ; 79                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -74,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; final              ; mini_cpu           ;
+; Top-level entity name                                            ; mini_cpu           ; mini_cpu           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -171,15 +169,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
-; ula.v                            ; yes             ; User Verilog HDL File              ; C:/Users/ray38/Downloads/Quartus/mini_cpu/ula.v      ;         ;
-; mini_cpu.v                       ; yes             ; User Verilog HDL File              ; C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v ;         ;
-; final.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ray38/Downloads/Quartus/mini_cpu/final.bdf  ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; mini_cpu.v                       ; yes             ; User Verilog HDL File  ; C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -187,48 +183,46 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 29        ;
+; Estimated Total logic elements              ; 50        ;
 ;                                             ;           ;
-; Total combinational functions               ; 25        ;
+; Total combinational functions               ; 16        ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 5         ;
 ;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 13        ;
+;     -- <=2 input functions                  ; 4         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 13        ;
-;     -- arithmetic mode                      ; 12        ;
+;     -- normal mode                          ; 11        ;
+;     -- arithmetic mode                      ; 5         ;
 ;                                             ;           ;
-; Total registers                             ; 25        ;
-;     -- Dedicated logic registers            ; 25        ;
+; Total registers                             ; 47        ;
+;     -- Dedicated logic registers            ; 47        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 37        ;
+; I/O pins                                    ; 79        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 25        ;
-; Total fan-out                               ; 213       ;
-; Average fan-out                             ; 1.72      ;
+; Maximum fan-out                             ; 47        ;
+; Total fan-out                               ; 304       ;
+; Average fan-out                             ; 1.38      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
-; |final                     ; 25 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |final                  ; final       ; work         ;
-;    |mini_cpu:inst123|      ; 16 (16)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|mini_cpu:inst123 ; mini_cpu    ; work         ;
-;    |outraula:inst|         ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|outraula:inst    ; outraula    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |mini_cpu                  ; 16 (16)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 79   ; 0            ; |mini_cpu           ; mini_cpu    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------+
-; State Machine - |final|mini_cpu:inst123|estado_enviar                                        ;
+; State Machine - |mini_cpu|estado_enviar                                                      ;
 +-----------------------+-----------------------+-----------------------+----------------------+
 ; Name                  ; estado_enviar.inicial ; estado_enviar.enviado ; estado_enviar.espera ;
 +-----------------------+-----------------------+-----------------------+----------------------+
@@ -240,7 +234,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |final|mini_cpu:inst123|estado_ligar                                                                    ;
+; State Machine - |mini_cpu|estado_ligar                                                                                  ;
 +-------------------------+-------------------------+---------------------+----------------------+------------------------+
 ; Name                    ; estado_ligar.desligando ; estado_ligar.ligado ; estado_ligar.ligando ; estado_ligar.desligado ;
 +-------------------------+-------------------------+---------------------+----------------------+------------------------+
@@ -251,287 +245,15 @@ Encoding Type:  One-Hot
 +-------------------------+-------------------------+---------------------+----------------------+------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; outraula:inst|registers[0][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[0][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[1][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[2][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[3][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[4][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[5][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[6][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[7][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[8][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][15]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][14]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][13]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][12]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][11]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][10]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][9]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][8]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][7]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][6]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][5]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][4]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][3]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][2]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][1]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[9][0]           ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[10][0]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[11][0]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[12][0]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[13][0]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[14][0]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][15]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][14]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][13]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][12]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][11]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][10]         ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][9]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][8]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][7]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][6]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][5]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][4]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][3]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][2]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][1]          ; Stuck at GND due to stuck port data_in ;
-; outraula:inst|registers[15][0]          ; Stuck at GND due to stuck port data_in ;
-; mini_cpu:inst123|src3[3]                ; Merged with mini_cpu:inst123|imm[6]    ;
-; outraula:inst|result[7..14]             ; Merged with outraula:inst|result[15]   ;
-; mini_cpu:inst123|src3[0..2]             ; Lost fanout                            ;
-; mini_cpu:inst123|src2[0..3]             ; Lost fanout                            ;
-; mini_cpu:inst123|estado_ligar~6         ; Lost fanout                            ;
-; mini_cpu:inst123|estado_ligar~7         ; Lost fanout                            ;
-; Total Number of Removed Registers = 274 ;                                        ;
-+-----------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                        ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------+
-; outraula:inst|registers[0][15] ; Stuck at GND              ; mini_cpu:inst123|src3[2], mini_cpu:inst123|src3[1], mini_cpu:inst123|src3[0], ;
-;                                ; due to stuck port data_in ; mini_cpu:inst123|src2[3], mini_cpu:inst123|src2[2]                            ;
-; outraula:inst|registers[0][12] ; Stuck at GND              ; mini_cpu:inst123|src2[1], mini_cpu:inst123|src2[0]                            ;
-;                                ; due to stuck port data_in ;                                                                               ;
-+--------------------------------+---------------------------+-------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; estado_ligar~6                        ; Lost fanout        ;
+; estado_ligar~7                        ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -539,61 +261,39 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
-; Number of registers using Synchronous Clear  ; 8     ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Total registers                              ; 47    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 42    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |final|outraula:inst|result[15]   ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |final|outraula:inst|result[5]    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |final|mini_cpu:inst123|Selector0 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |final|mini_cpu:inst123|Selector1 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |mini_cpu|Selector0        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |mini_cpu|Selector1        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: outraula:inst ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; LOAD           ; 000   ; Unsigned Binary                   ;
-; ADD            ; 001   ; Unsigned Binary                   ;
-; ADDI           ; 010   ; Unsigned Binary                   ;
-; SUB            ; 011   ; Unsigned Binary                   ;
-; SUBI           ; 100   ; Unsigned Binary                   ;
-; MUL            ; 101   ; Unsigned Binary                   ;
-; CLEAR          ; 110   ; Unsigned Binary                   ;
-; DISPLAY        ; 111   ; Unsigned Binary                   ;
-; CLEAN          ; 00    ; Unsigned Binary                   ;
-; WRITE          ; 01    ; Unsigned Binary                   ;
-; SHOW           ; 10    ; Unsigned Binary                   ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mini_cpu:inst123 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; desligado      ; 0     ; Signed Integer                       ;
-; ligando        ; 1     ; Signed Integer                       ;
-; ligado         ; 2     ; Signed Integer                       ;
-; desligando     ; 3     ; Signed Integer                       ;
-; inicial        ; 0     ; Signed Integer                       ;
-; espera         ; 1     ; Signed Integer                       ;
-; enviado        ; 2     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |mini_cpu ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; desligado      ; 0     ; Signed Integer                                  ;
+; ligando        ; 1     ; Signed Integer                                  ;
+; ligado         ; 2     ; Signed Integer                                  ;
+; desligando     ; 3     ; Signed Integer                                  ;
+; inicial        ; 0     ; Signed Integer                                  ;
+; espera         ; 1     ; Signed Integer                                  ;
+; enviado        ; 2     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -602,23 +302,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 25                          ;
-;     ENA               ; 12                          ;
-;     ENA SCLR SLD      ; 8                           ;
+; boundary_port         ; 79                          ;
+; cycloneiii_ff         ; 47                          ;
+;     ENA               ; 42                          ;
 ;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 25                          ;
-;     arith             ; 12                          ;
-;         2 data inputs ; 7                           ;
+; cycloneiii_lcell_comb ; 16                          ;
+;     arith             ; 5                           ;
 ;         3 data inputs ; 5                           ;
-;     normal            ; 13                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 5                           ;
+;     normal            ; 11                          ;
+;         2 data inputs ; 4                           ;
 ;         3 data inputs ; 2                           ;
 ;         4 data inputs ; 5                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.50                        ;
-; Average LUT depth     ; 1.31                        ;
+; Average LUT depth     ; 0.58                        ;
 +-----------------------+-----------------------------+
 
 
@@ -637,44 +334,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Mar 23 14:05:21 2025
+    Info: Processing started: Mon Mar 24 17:45:51 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_cpu -c mini_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
-    Info (12023): Found entity 1: outraula File: C:/Users/ray38/Downloads/Quartus/mini_cpu/ula.v Line: 1
+    Info (12023): Found entity 1: ula File: C:/Users/ray38/Downloads/Quartus/mini_cpu/ula.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mini_cpu.v
     Info (12023): Found entity 1: mini_cpu File: C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file final.bdf
-    Info (12023): Found entity 1: final
-Info (12127): Elaborating entity "final" for the top level hierarchy
-Info (12128): Elaborating entity "outraula" for hierarchy "outraula:inst"
-Warning (10034): Output port "display" at ula.v(12) has no driver File: C:/Users/ray38/Downloads/Quartus/mini_cpu/ula.v Line: 12
-Info (12128): Elaborating entity "mini_cpu" for hierarchy "mini_cpu:inst123"
-Warning (10036): Verilog HDL or VHDL warning at mini_cpu.v(18): object "registers" assigned a value but never read File: C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v Line: 18
+Info (12127): Elaborating entity "mini_cpu" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at mini_cpu.v(22): object "registers" assigned a value but never read File: C:/Users/ray38/Downloads/Quartus/mini_cpu/mini_cpu.v Line: 22
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/ray38/Downloads/Quartus/mini_cpu/output_files/mini_cpu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "info[14]"
-    Warning (15610): No output dependent on input pin "info[13]"
-    Warning (15610): No output dependent on input pin "info[12]"
-    Warning (15610): No output dependent on input pin "info[11]"
-    Warning (15610): No output dependent on input pin "info[10]"
-    Warning (15610): No output dependent on input pin "info[9]"
-    Warning (15610): No output dependent on input pin "info[8]"
-    Warning (15610): No output dependent on input pin "info[7]"
-Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 29 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4805 megabytes
-    Info: Processing ended: Sun Mar 23 14:05:27 2025
+Info (21057): Implemented 129 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 39 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21061): Implemented 50 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4807 megabytes
+    Info: Processing ended: Mon Mar 24 17:45:57 2025
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +------------------------------------------+

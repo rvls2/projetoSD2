@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off mini_cpu -c mini_cpu --vector_source="C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform1.vwf" --testbench_file="C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/Waveform1.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off mini_cpu -c mini_cpu --vector_source="C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform.vwf" --testbench_file="C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/Waveform.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,10 +26,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Mar 23 14:06:54 2025
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off mini_cpu -c mini_cpu --vector_source=C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform1.vwf --testbench_file=C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/Waveform1.vwf.vt
+    Info: Processing started: Mon Mar 24 17:50:04 2025
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off mini_cpu -c mini_cpu --vector_source=C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform.vwf --testbench_file=C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/Waveform.vwf.vt
 Info (119006): Selected device EP4CE115F29C7 for design "mini_cpu"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+oring output pin "src3[3]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -56,14 +58,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Mar 23 14:06:55 2025
+    Info: Processing started: Mon Mar 24 17:50:10 2025
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/ mini_cpu -c mini_cpu
 Info (119006): Selected device EP4CE115F29C7 for design "mini_cpu"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file mini_cpu.vo in folder "C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4655 megabytes
-    Info: Processing ended: Sun Mar 23 14:06:55 2025
+    Info: Processing ended: Mon Mar 24 17:50:10 2025
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -81,58 +83,58 @@ c:/intelfpga_lite/20.1/modelsim_ase/win32aloem//vsim -c -do mini_cpu.do
 
 Reading pref.tcl
 
-
 # 2020.1
+
 
 # do mini_cpu.do
 # ** Warning: (vlib-34) Library already exists at "work".
-
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:56 on Mar 23,2025
+# Start time: 17:50:12 on Mar 24,2025
 # vlog -work work mini_cpu.vo 
-# -- Compiling module final
+
+# -- Compiling module mini_cpu
 # 
 # Top level modules:
-# 	final
-# End time: 14:06:56 on Mar 23,2025, Elapsed time: 0:00:00
+# 	mini_cpu
+# End time: 17:50:12 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:56 on Mar 23,2025
-# vlog -work work Waveform1.vwf.vt 
-# -- Compiling module final_vlg_vec_tst
+# Start time: 17:50:12 on Mar 24,2025
+# vlog -work work Waveform.vwf.vt 
+
+# -- Compiling module mini_cpu_vlg_vec_tst
 # 
 # Top level modules:
-# 	final_vlg_vec_tst
-# End time: 14:06:56 on Mar 23,2025, Elapsed time: 0:00:00
+# 	mini_cpu_vlg_vec_tst
+# End time: 17:50:12 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.final_vlg_vec_tst 
-# Start time: 14:06:56 on Mar 23,2025
-# Loading work.final_vlg_vec_tst
-# Loading work.final
+# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.mini_cpu_vlg_vec_tst 
+# Start time: 17:50:12 on Mar 24,2025
+# Loading work.mini_cpu_vlg_vec_tst
+# Loading work.mini_cpu
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
 # Loading cycloneive_ver.cycloneive_lcell_comb
 # Loading altera_ver.dffeas
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#25
-# ** Note: $finish    : Waveform1.vwf.vt(51)
-#    Time: 1 us  Iteration: 0  Instance: /final_vlg_vec_tst
-# End time: 14:06:56 on Mar 23,2025, Elapsed time: 0:00:00
+# ** Note: $finish    : Waveform.vwf.vt(67)
+#    Time: 1 us  Iteration: 0  Instance: /mini_cpu_vlg_vec_tst
+# End time: 17:50:12 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform1.vwf...
+Reading C:/Users/ray38/Downloads/Quartus/mini_cpu/Waveform.vwf...
 
 Reading C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/mini_cpu.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/mini_cpu_20250323140656.sim.vwf
+Writing the resulting VWF to C:/Users/ray38/Downloads/Quartus/mini_cpu/simulation/qsim/mini_cpu_20250324175012.sim.vwf
 
 Finished VCD to VWF conversion.
 
